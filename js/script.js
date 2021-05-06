@@ -10,7 +10,13 @@ function getRandomNumber (min, max) {
   }
 
 // /FUNZIONI COMUNI 
+
+// VARIABILI
+var numeriCasuali = [];
+console.log("Numeri Casuali", numeriCasuali);
+// /VARIABILI
 // Scrivo un alert che mi espone 5 numeri casuali
 for(var i=0; i<5; i++){
     alert (getRandomNumber(1, 100));
+    numeriCasuali.push(getRandomNumber(1, 100));
 }

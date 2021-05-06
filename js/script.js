@@ -20,24 +20,32 @@ function chiediNumero(){
     console.log(listaUtente);*/
 }
 
+function isInArray(element, array){
+    for (var i = 0; i < array.length; i++){
+        if (element == array [i]){
+            return true;
+        }
+    }
+    return false;
+}
+
 // /FUNZIONI COMUNI 
 
 // VARIABILI
 var numeroUtente;
 var numeriCasuali = [];
 var listaUtente = [];
+var indovinati = [];
 // /VARIABILI
 
 // Scrivo un alert che mi espone 5 numeri casuali
 for(var i=0; i<5; i++){
 
-    // assicurarti che i numeri non siano duplicati
     var number = getRandomNumber(1, 100);
 
     alert (number);
     numeriCasuali.push(number);
 }
-
 console.log("Numeri Casuali", numeriCasuali);
 
 setTimeout(function() {
@@ -48,3 +56,15 @@ for(var i = 0; i < numeriCasuali.length; i++){
 })
 console.log("Inseriti dall'utente", listaUtente);
 
+for(var i = 0; i < numeriCasuali.length; i++){
+
+    if(isInArray(numeroUtente, indovinati)){
+    alert ("Il numero è gia presente");
+
+} else if(isInArray(numeroUtente, numeriCasuali)){
+    indovinati.push(numeroUtente);
+    console.log("Hai una buona memoria, hai indovinato " + numeroUtente);
+// } else{
+//     console.log("Il numero inserito non è corretto");
+// }
+}}

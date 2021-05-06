@@ -9,14 +9,42 @@ function getRandomNumber (min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
+function chiediNumero(){
+
+    var numeroUtente = parseInt(prompt("Ricordi i numeri che hai letto? Inseriscili qui"));
+
+    return numeroUtente;
+
+    /*/listaUtente.push(numeroUtente);
+
+    console.log(listaUtente);*/
+}
+
 // /FUNZIONI COMUNI 
 
 // VARIABILI
+var numeroUtente;
 var numeriCasuali = [];
-console.log("Numeri Casuali", numeriCasuali);
+var listaUtente = [];
 // /VARIABILI
+
 // Scrivo un alert che mi espone 5 numeri casuali
 for(var i=0; i<5; i++){
-    alert (getRandomNumber(1, 100));
-    numeriCasuali.push(getRandomNumber(1, 100));
+
+    // assicurarti che i numeri non siano duplicati
+    var number = getRandomNumber(1, 100);
+
+    alert (number);
+    numeriCasuali.push(number);
 }
+
+console.log("Numeri Casuali", numeriCasuali);
+
+setTimeout(function() {
+for(var i = 0; i < numeriCasuali.length; i++){
+    var n = chiediNumero(); 
+    listaUtente.push(n);
+} 3000;
+})
+console.log("Inseriti dall'utente", listaUtente);
+

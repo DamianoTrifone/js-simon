@@ -52,16 +52,19 @@ setTimeout(function() {
 for(var i = 0; i < numeriCasuali.length; i++){
     var n = chiediNumero(); 
     listaUtente.push(n);
-} 3000;
+} 30000;
 })
 console.log("Inseriti dall'utente", listaUtente);
 
+var array = false; //Variabile booleana di riferimento
 for(var i = 0; i < numeriCasuali.length; i++){
+var numeroInserito = n;
 
-    if(isInArray(numeroUtente, indovinati)){
+    if(isInArray(n, listaUtente)){
+    array == true;
     alert ("Il numero è gia presente");
 
-} else if(isInArray(numeroUtente, numeriCasuali)){
+} else if(isInArray(n, numeriCasuali)){
     indovinati.push(numeroUtente);
     console.log("Hai una buona memoria, hai indovinato " + numeroUtente);
 // } else{
